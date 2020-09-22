@@ -1,4 +1,5 @@
-from tkinter import *
+from tkinter import  Label,Frame,Button,Text,StringVar,Tk,Entry,LabelFrame
+
 import tkinter.messagebox
 import requests
 
@@ -27,7 +28,7 @@ class whether_app:
             But_search['foreground']="SystemButtonText"    
 
         def clear():
-            TXT.delete('1.0',END)
+            TXT.delete('1.0',"end")
 
         def search():
             try:
@@ -50,39 +51,39 @@ class whether_app:
                     #print(whether['timezone'])
 
                     clear()
-                    TXT.insert(END,"Name : ")
-                    TXT.insert(END,whether['name'])
-                    TXT.insert(END,"\n")
-                    TXT.insert(END,"Whether description : ")
-                    TXT.insert(END,a)
-                    TXT.insert(END,"\n")
-                    TXT.insert(END,"Temperature : ")
-                    TXT.insert(END,whether['main']['temp'])
-                    TXT.insert(END,"\n")
-                    TXT.insert(END,"humidity : ")
-                    TXT.insert(END,whether['main']['humidity'])
-                    TXT.insert(END,"\n")
-                    TXT.insert(END,"Wind Speed : ")
-                    TXT.insert(END,whether['wind']['speed'])
-                    TXT.insert(END,"\n")
-                    TXT.insert(END,"Country : ")
-                    TXT.insert(END,whether['sys']['country'])
-                    TXT.insert(END,"\n")
-                    TXT.insert(END,"Timezone : ")
-                    TXT.insert(END,whether['timezone'])
+                    TXT.insert("end","Name : ")
+                    TXT.insert("end",whether['name'])
+                    TXT.insert("end","\n")
+                    TXT.insert("end","Whether description : ")
+                    TXT.insert("end",a)
+                    TXT.insert("end","\n")
+                    TXT.insert("end","Temperature : ")
+                    TXT.insert("end",whether['main']['temp'])
+                    TXT.insert("end","\n")
+                    TXT.insert("end","humidity : ")
+                    TXT.insert("end",whether['main']['humidity'])
+                    TXT.insert("end","\n")
+                    TXT.insert("end","Wind Speed : ")
+                    TXT.insert("end",whether['wind']['speed'])
+                    TXT.insert("end","\n")
+                    TXT.insert("end","Country : ")
+                    TXT.insert("end",whether['sys']['country'])
+                    TXT.insert("end","\n")
+                    TXT.insert("end","Timezone : ")
+                    TXT.insert("end",whether['timezone'])
             except:
                 tkinter.messagebox.askretrycancel("Info","Somthing went wrong or network error")
 
 
                 
     #=====================Frame=======================
-        Main_Frame=Frame(self.root,width=500,height=300,relief=RIDGE,bd=3)
+        Main_Frame=Frame(self.root,width=500,height=300,relief="ridge",bd=3)
         Main_Frame.place(x=0,y=0)
 
-        top_frame=Frame(Main_Frame,width=495,height=90,relief=RIDGE,bd=3)
+        top_frame=Frame(Main_Frame,width=495,height=90,relief="ridge",bd=3)
         top_frame.place(x=0,y=0)
 
-        Bottom_Frame=Frame(Main_Frame,width=495,height=205,relief=RIDGE,bd=3)
+        Bottom_Frame=Frame(Main_Frame,width=495,height=205,relief="ridge",bd=3)
         Bottom_Frame.place(x=0,y=90)
 
         #============================================================
@@ -92,7 +93,7 @@ class whether_app:
         Ent_search=Entry(lab_top,font=('times new roman',14,'bold'),width=30,bd=2,textvariable=search_what)
         Ent_search.place(x=20,y=10)
 
-        But_search=Button(lab_top,text="Search",font=('times new roman',11,'bold'),relief=RIDGE,bd=3,width=14,cursor="hand2",command=search)
+        But_search=Button(lab_top,text="Search",font=('times new roman',11,'bold'),relief="ridge",bd=3,width=14,cursor="hand2",command=search)
         But_search.place(x=330,y=8)
         But_search.bind("<Enter>",on_enter1)
         But_search.bind("<Leave>",on_leave1)
