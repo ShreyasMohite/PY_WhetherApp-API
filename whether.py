@@ -12,7 +12,7 @@ class Whether:
     def __init__(self,root):
         
         self.root=root
-        self.root.title("Whether App")
+        self.root.title("Whether Apps")
         self.root.geometry("500x300")
         self.root.resizable(0,0)
         self.root.iconbitmap("whether.ico")
